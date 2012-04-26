@@ -90,23 +90,4 @@ public class HoloAlertDialogBuilder extends AlertDialog.Builder {
 		mIcon.setImageDrawable(icon);
 		return this;
 	}
-
-	
-//	@Override
-//	public AlertDialog create() {
-//		final AlertDialog dialog = super.create();
-//		
-//		final Button positive = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
-//		final Button negative = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
-//		final Button neutral = dialog.getButton(AlertDialog.BUTTON_NEUTRAL);
-//		
-//		if (positive != null)
-//			positive.setBackgroundResource(R.drawable.button_holo);
-//		if (negative != null)
-//			negative.setBackgroundResource(R.drawable.button_holo);
-//		if (neutral != null)
-//			neutral.setBackgroundResource(R.drawable.button_holo);
-//		
-//		return dialog;
-//	}	
 }

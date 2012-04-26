@@ -39,7 +39,8 @@
             android:id="@+id/alertTitle"
             style="@android:style/TextAppearance.Large"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/holo_blue_light" />
     </LinearLayout>
 
     <View
