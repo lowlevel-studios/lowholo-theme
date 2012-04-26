@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.LowHolo" parent="android:Theme.Holo">
+        <item name="android:windowNoTitle">false</item>
+    </style>
+
+    <style name="Theme.LowHolo.Light" parent="android:Theme.Holo.Light">
+        <item name="android:windowNoTitle">false</item>
+    </style>
+
+    <style name="Theme.LowHolo.Sherlock" parent="Theme.Sherlock"></style>
+    <style name="Theme.LowHolo.Light.Sherlock" parent="Theme.Sherlock.Light"></style>
+
+</resources>
