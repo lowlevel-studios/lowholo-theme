@@ -2,6 +2,7 @@ package com.lowlevel.lowholotheme;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.Button;
@@ -12,11 +13,14 @@ public class ProgressDialogHolo extends ProgressDialog {
 	/*
 	 * Private variables
 	 */
+	private Context mContext;
 	private TextView mTitle;
 	private ImageView mIcon;
 	
 	public ProgressDialogHolo(Context context) {
 		super(context);
+		
+		mContext = context;
 
 		final View title = View.inflate(context, R.layout.alert_dialog_title, null);
 		
@@ -60,5 +64,18 @@ public class ProgressDialogHolo extends ProgressDialog {
 	@Override
 	public void setIcon(Drawable icon) {
 		mIcon.setImageDrawable(icon);
+	}
+
+	@Override
+	public void setProgressStyle(int style) {
+		super.setProgressStyle(style);
+		
+		switch (style) {
+		case ProgressDialog.STYLE_HORIZONTAL:
+			final Resources res = mContext.getResources();
+			
+			setProgressDrawable(res.getDrawable(R.drawable.progress_horizontal_holo_dark));
+			break;
+		}
 	}
 }
