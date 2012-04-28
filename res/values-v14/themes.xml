@@ -11,8 +11,10 @@
 
     <style name="Theme.LowHolo.Sherlock" parent="Theme.Sherlock"></style>
     <style name="Theme.LowHolo.Sherlock.Dialog" parent="Theme.Sherlock.Dialog"></style>
+    <style name="Theme.LowHolo.Sherlock.Preferences" parent="Theme.Sherlock"></style>
     
     <style name="Theme.LowHolo.Light.Sherlock" parent="Theme.Sherlock.Light"></style>
     <style name="Theme.LowHolo.Light.Sherlock.Dialog" parent="Theme.Sherlock.Light.Dialog"></style>
+    <style name="Theme.LowHolo.Light.Sherlock.Preferences" parent="Theme.Sherlock.Light"></style>
     
 </resources>

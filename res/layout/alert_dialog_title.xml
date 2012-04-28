@@ -35,11 +35,13 @@
             android:paddingRight="8dip"
             android:src="@null" />
 
-        <TextView
+        <com.android.internal.widget.DialogTitle
             android:id="@+id/alertTitle"
             style="@android:style/TextAppearance.Large"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:textColor="@color/holo_blue_light" />
     </LinearLayout>
 
