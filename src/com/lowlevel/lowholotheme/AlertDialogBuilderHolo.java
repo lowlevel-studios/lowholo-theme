@@ -1,14 +1,22 @@
 package com.lowlevel.lowholotheme;
 
 import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class AlertDialogBuilderHolo extends AlertDialogHolo.Builder {
+	/*
+	 * Constants
+	 */
+	private static final int MIN_VERSION = VERSION_CODES.HONEYCOMB;
+
 	/*
 	 * Private variables
 	 */
@@ -20,80 +28,108 @@ public class AlertDialogBuilderHolo extends AlertDialogHolo.Builder {
 	public AlertDialogBuilderHolo(Context context) {
 		super(context);
 
-		final View title = View.inflate(context, R.layout.alert_dialog_title, null);
-		
-		mTitle = (TextView)title.findViewById(R.id.alertTitle);
-		mIcon = (ImageView)title.findViewById(R.id.icon);
-		setCustomTitle(title);
-		
-		final View message = View.inflate(context, R.layout.alert_dialog_message, null);
-		
-		mMessage = (TextView)message.findViewById(R.id.message);
-		setView(message);
+		if (VERSION.SDK_INT < MIN_VERSION) {
+			final View title = View.inflate(context, R.layout.alert_dialog_title, null);
+			
+			mTitle = (TextView)title.findViewById(R.id.alertTitle);
+			mIcon = (ImageView)title.findViewById(R.id.icon);
+			setCustomTitle(title);
+			
+			final View message = View.inflate(context, R.layout.alert_dialog_message, null);
+			
+			mMessage = (TextView)message.findViewById(R.id.message);
+			setView(message);
+		}
 	}
 	
 	@Override
     public AlertDialog show() {
     	final AlertDialog dialog = super.show();
     	
-		final Button positive = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
-		final Button negative = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
-		final Button neutral = dialog.getButton(AlertDialog.BUTTON_NEUTRAL);
-
-		if (positive != null)
-			positive.setBackgroundResource(R.drawable.button_holo);
-		if (negative != null)
-			negative.setBackgroundResource(R.drawable.button_holo);
-		if (neutral != null)
-			neutral.setBackgroundResource(R.drawable.button_holo);
-
+		if (VERSION.SDK_INT < MIN_VERSION) {
+			final Button positive = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+			final Button negative = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+			final Button neutral = dialog.getButton(AlertDialog.BUTTON_NEUTRAL);
+	
+			if (positive != null)
+				positive.setBackgroundResource(R.drawable.button_holo);
+			if (negative != null)
+				negative.setBackgroundResource(R.drawable.button_holo);
+			if (neutral != null)
+				neutral.setBackgroundResource(R.drawable.button_holo);
+		}
+		
 		return dialog;
     }
 
 	@Override
-	public AlertDialogBuilderHolo setTitle(int textResId) {
-		mTitle.setText(textResId);
-		return this;
+	public Builder setTitle(int textResId) {
+		if (VERSION.SDK_INT < MIN_VERSION) {
+			mTitle.setText(textResId);
+			return this;
+		}
+		
+		return super.setTitle(textResId);
 	}
 
 	@Override
-	public AlertDialogBuilderHolo setTitle(CharSequence text) {
-		mTitle.setText(text);
-		return this;
+	public Builder setTitle(CharSequence text) {
+		if (VERSION.SDK_INT < MIN_VERSION) {
+			mTitle.setText(text);
+			return this;
+		}
+		
+		return super.setTitle(text);
 	}
 
-	public AlertDialogBuilderHolo setMessage(int textResId) {
-		mMessage.setText(textResId);
+	public Builder setMessage(int textResId) {
+		if (VERSION.SDK_INT < MIN_VERSION) {
+			mMessage.setText(textResId);
+			
+			if (mMessage.getText().length() > 0)
+				mMessage.setVisibility(View.VISIBLE);
+			else 
+				mMessage.setVisibility(View.GONE);
+			
+			return this;
+		}
 		
-		if (mMessage.getText().length() > 0)
-			mMessage.setVisibility(View.VISIBLE);
-		else 
-			mMessage.setVisibility(View.GONE);
-		
-		return this;
-	}
-
-	@Override
-	public AlertDialogBuilderHolo setMessage(CharSequence text) {
-		mMessage.setText(text);
-		
-		if (mMessage.getText().length() > 0)
-			mMessage.setVisibility(View.VISIBLE);
-		else 
-			mMessage.setVisibility(View.GONE);
-		
-		return this;
+		return super.setMessage(textResId);
 	}
 
 	@Override
-	public AlertDialogBuilderHolo setIcon(int drawableResId) {
-		mIcon.setImageResource(drawableResId);
-		return this;
+	public Builder setMessage(CharSequence text) {
+		if (VERSION.SDK_INT < MIN_VERSION) {
+			mMessage.setText(text);
+			
+			if (mMessage.getText().length() > 0)
+				mMessage.setVisibility(View.VISIBLE);
+			else 
+				mMessage.setVisibility(View.GONE);
+			
+			return this;
+		}
+		
+		return super.setMessage(text);
 	}
 
 	@Override
-	public AlertDialogBuilderHolo setIcon(Drawable icon) {
-		mIcon.setImageDrawable(icon);
-		return this;
+	public Builder setIcon(int drawableResId) {
+		if (VERSION.SDK_INT < MIN_VERSION) {
+			mIcon.setImageResource(drawableResId);
+			return this;
+		}
+		
+		return super.setIcon(drawableResId);
+	}
+
+	@Override
+	public Builder setIcon(Drawable icon) {
+		if (VERSION.SDK_INT < MIN_VERSION) {
+			mIcon.setImageDrawable(icon);
+			return this;
+		}
+		
+		return super.setIcon(icon);
 	}
 }
