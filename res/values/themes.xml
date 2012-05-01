@@ -22,6 +22,7 @@
 		<item name="android:spinnerItemStyle">@style/SpinnerItemDark</item>
 		<item name="android:spinnerDropDownItemStyle">@style/DropDownItemDark</item>
 		<item name="android:listSeparatorTextViewStyle">@style/ListSeparatorHoloDark</item>
+		<item name="android:expandableListViewStyle">@style/ExpandableListViewDark</item>
 	</style>
 	
 	<style name="Theme.LowHolo.Sherlock.Dialog" parent="Theme.Sherlock.Dialog">
@@ -42,6 +43,7 @@
 		<item name="android:spinnerItemStyle">@style/SpinnerItemDark</item>
 		<item name="android:spinnerDropDownItemStyle">@style/DropDownItemDark</item>
 		<item name="android:listSeparatorTextViewStyle">@style/ListSeparatorHoloDark</item>
+		<item name="android:expandableListViewStyle">@style/ExpandableListViewDark</item>
 	</style>
 	
 	<style name="Theme.LowHolo.Sherlock.Preferences" parent="Theme.Sherlock">
@@ -70,6 +72,7 @@
 		<item name="android:spinnerItemStyle">@style/SpinnerItemLight</item>
 		<item name="android:spinnerDropDownItemStyle">@style/DropDownItemLight</item>
 		<item name="android:listSeparatorTextViewStyle">@style/ListSeparatorHoloLight</item>
+		<item name="android:expandableListViewStyle">@style/ExpandableListViewLight</item>
 	</style>
 	
 	<style name="Theme.LowHolo.Light.Sherlock.Dialog" parent="Theme.Sherlock.Light.Dialog">
@@ -90,6 +93,7 @@
 		<item name="android:spinnerItemStyle">@style/SpinnerItemLight</item>
 		<item name="android:spinnerDropDownItemStyle">@style/DropDownItemLight</item>
 		<item name="android:listSeparatorTextViewStyle">@style/ListSeparatorHoloLight</item>
+		<item name="android:expandableListViewStyle">@style/ExpandableListViewLight</item>
 	</style>
 	
 	<style name="Theme.LowHolo.Light.Sherlock.Preferences" parent="Theme.Sherlock.Light">
@@ -118,6 +122,7 @@
 		<item name="android:spinnerItemStyle">@style/SpinnerItemDark</item>
 		<item name="android:spinnerDropDownItemStyle">@style/DropDownItemDark</item>
 		<item name="android:listSeparatorTextViewStyle">@style/ListSeparatorHoloDark</item>
+		<item name="android:expandableListViewStyle">@style/ExpandableListViewDark</item>
 	</style>
 
 	<style name="Theme.LowHolo.Light" parent="android:Theme.Light.NoTitleBar">
@@ -138,6 +143,7 @@
 		<item name="android:spinnerItemStyle">@style/SpinnerItemLight</item>
 		<item name="android:spinnerDropDownItemStyle">@style/DropDownItemLight</item>
 		<item name="android:listSeparatorTextViewStyle">@style/ListSeparatorHoloLight</item>
+		<item name="android:expandableListViewStyle">@style/ExpandableListViewLight</item>		
 	</style>
 	
 </resources>
