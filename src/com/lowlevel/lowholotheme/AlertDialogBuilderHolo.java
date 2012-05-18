@@ -22,7 +22,6 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -74,10 +73,6 @@ public class AlertDialogBuilderHolo extends AlertDialogHolo.Builder {
 				negative.setBackgroundResource(R.drawable.button_holo);
 			if (neutral != null)
 				neutral.setBackgroundResource(R.drawable.button_holo);
-			
-			Log.w("uMusic", "Positive: " + positive.getHeight());
-			Log.w("uMusic", "Negative: " + negative.getHeight());
-			Log.w("uMusic", "Neutral: " + neutral.getHeight());
 		}
 		
 		return dialog;
