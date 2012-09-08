@@ -40,7 +40,7 @@ public class AlertDialogHolo extends AlertDialog {
 	private TextView mMessage;
 	
 	
-	protected AlertDialogHolo(Context context) {
+	public AlertDialogHolo(Context context) {
 		super(context);
 
 		if (VERSION.SDK_INT < MIN_VERSION) {
@@ -57,7 +57,7 @@ public class AlertDialogHolo extends AlertDialog {
 		}
 	}
 	
-	protected AlertDialogHolo(Context context, int theme) {
+	public AlertDialogHolo(Context context, int theme) {
         super(context, theme);
     }
 		
